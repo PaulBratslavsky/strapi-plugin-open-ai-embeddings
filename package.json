@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-open-ai-embeddings",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create embeddings with LangChain, Open Ai and Pinecone.",
   "strapi": {
     "name": "strapi-plugin-open-ai-embeddings",
@@ -31,11 +31,7 @@
     "styled-components": "^5.3.6"
   },
   "peerDependencies": {
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0",
-    "react-router-dom": "^5.3.4",
-    "styled-components": "^5.3.6",
-    "strapi": "^4.11.4"
+    "strapi": "^4.11.0"
   },
   "author": {
     "name": "Paul Bratslavsky",
