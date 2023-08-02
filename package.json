@@ -1,9 +1,9 @@
 {
   "name": "strapi-plugin-open-ai-embeddings",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Create embeddings with LangChain, Open Ai and Pinecone.",
   "strapi": {
-    "name": "strapi-plugin-open-ai-embeddings",
+    "name": "open-ai-embeddings",
     "description": "Create embeddings with LangChain, Open Ai and Pinecone.",
     "kind": "plugin",
     "displayName": "Open AI Embeddings"

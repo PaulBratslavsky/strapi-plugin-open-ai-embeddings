@@ -6,7 +6,7 @@ module.exports = ({ strapi }) => {
     contentType.attributes.embedding = {
       type: "relation",
       relation: "morphOne",
-      target: "plugin::strapi-plugin-open-ai-embeddings.embedding",
+      target: "plugin::open-ai-embeddings.embedding",
       morphBy: "related",
       private: false,
       configurable: false,
