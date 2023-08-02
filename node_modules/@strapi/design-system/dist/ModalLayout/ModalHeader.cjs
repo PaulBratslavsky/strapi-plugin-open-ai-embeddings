@@ -1,0 +1,4 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const o=require("react/jsx-runtime"),n=require("@strapi/icons"),d=require("styled-components"),s=require("./ModalContext.cjs"),a=require("../IconButton/IconButton.cjs"),l=require("../Box/Box.cjs"),i=require("../Flex/Flex.cjs"),u=e=>e&&e.__esModule?e:{default:e},c=u(d),p=c.default(l.Box)`
+  border-radius: ${({theme:e})=>e.borderRadius} ${({theme:e})=>e.borderRadius} 0 0;
+  border-bottom: 1px solid ${({theme:e})=>e.colors.neutral150};
+`,x=({children:e,closeLabel:t="Close the modal"})=>{const r=s.useModal();return o.jsx(p,{paddingTop:4,paddingBottom:4,paddingLeft:5,paddingRight:5,background:"neutral100",children:o.jsxs(i.Flex,{justifyContent:"space-between",children:[e,o.jsx(a.IconButton,{onClick:r,"aria-label":t,icon:o.jsx(n.Cross,{})})]})})};exports.ModalHeader=x;

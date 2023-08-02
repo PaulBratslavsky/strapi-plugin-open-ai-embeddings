@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const a=require("./Tabs.cjs"),e=require("./TabPanels.cjs"),b=require("./TabGroup.cjs");exports.Tab=a.Tab;exports.Tabs=a.Tabs;exports.TabPanel=e.TabPanel;exports.TabPanels=e.TabPanels;exports.TabGroup=b.TabGroup;

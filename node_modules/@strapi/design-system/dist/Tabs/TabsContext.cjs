@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("react"),t=e.createContext({id:"",label:"",selectedTabIndex:0,selectTabIndex(){throw new Error("TabsContext.selectTabIndex is not implemented.")}}),s=()=>e.useContext(t);exports.TabsContext=t;exports.useTabs=s;

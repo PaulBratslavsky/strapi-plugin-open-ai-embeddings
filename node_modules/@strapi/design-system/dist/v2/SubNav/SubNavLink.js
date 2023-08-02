@@ -1,0 +1,50 @@
+import { jsxs as l, jsx as o } from "react/jsx-runtime";
+import u from "react";
+import { Dot as g } from "@strapi/icons";
+import e from "styled-components";
+import { Box as t } from "../../Box/Box.js";
+import { Typography as s } from "../../Typography/Typography.js";
+import { Flex as n } from "../../Flex/Flex.js";
+import { BaseLink as $ } from "../../BaseLink/BaseLink.js";
+const h = e(t)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: ${({ theme: r }) => r.colors.neutral800};
+  svg > * {
+    fill: ${({ theme: r }) => r.colors.neutral600};
+  }
+
+  &.active {
+    ${({ theme: r }) => `
+      background-color: ${r.colors.primary100};
+      border-right: 2px solid ${r.colors.primary600};
+      svg > * {
+        fill: ${r.colors.primary700};
+      }
+      ${s} {
+        color: ${r.colors.primary700};
+        font-weight: 500;
+      }
+      `}
+  }
+
+  &:focus-visible {
+    outline-offset: -2px;
+  }
+`, a = e(g)`
+  width: ${12 / 16}rem;
+  height: ${4 / 16}rem;
+  * {
+    fill: ${({ theme: r, $active: i }) => i ? r.colors.primary600 : r.colors.neutral600};
+  }
+`, y = e.div`
+  svg {
+    height: ${12 / 16}rem;
+    width: ${12 / 16}rem;
+  }
+`, R = u.forwardRef(({ children: r, icon: i = null, withBullet: c = !1, as: p = $, isSubSectionChild: d = !1, ...f }, m) => l(h, { as: p, icon: i, background: "neutral100", paddingLeft: d ? 9 : 7, paddingBottom: 2, paddingTop: 2, ref: m, ...f, children: [l(n, { children: [i ? o(y, { children: i }) : o(a, {}), o(t, { paddingLeft: 2, children: o(s, { as: "span", children: r }) })] }), c && o(t, { as: n, paddingRight: 4, children: o(a, { $active: !0 }) })] }));
+export {
+  R as SubNavLink
+};

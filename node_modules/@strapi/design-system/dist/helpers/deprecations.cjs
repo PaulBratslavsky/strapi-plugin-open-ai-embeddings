@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const n="[@strapi/design-system]:",c=r=>{const e=r;let t=!1;if(typeof e!="function")throw new TypeError(`${n} once requires a function parameter`);return(...o)=>{t||(e(...o),t=!0)}};exports.PREFIX=n;exports.once=c;

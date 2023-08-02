@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const n=require("react"),u=r=>{const e=n.useRef(null),[c,i]=n.useState(!0),o=([t])=>{i(t.isIntersecting)};return n.useEffect(()=>{const t=e.current,s=new IntersectionObserver(o,r);return t&&s.observe(e.current),()=>{t&&s.disconnect()}},[e,r]),[e,c]};exports.useElementOnScreen=u;

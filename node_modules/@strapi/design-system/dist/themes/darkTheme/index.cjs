@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const o=require("./dark-colors.cjs"),e=require("./dark-shadows.cjs"),r=require("../common-theme.cjs"),a={colors:o.darkColorTokenObject.color,shadows:e.darkShadowTokenObject.shadow,...r.commonTheme};exports.darkTheme=a;

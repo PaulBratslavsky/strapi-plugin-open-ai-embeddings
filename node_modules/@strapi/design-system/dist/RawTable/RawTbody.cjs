@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const a=require("react/jsx-runtime"),r=require("react"),l=({children:t,...n})=>{const o=r.Children.toArray(t).map((e,i)=>r.isValidElement(e)?r.cloneElement(e,{"aria-rowindex":i+2}):e);return a.jsx("tbody",{...n,children:o})};exports.RawTbody=l;

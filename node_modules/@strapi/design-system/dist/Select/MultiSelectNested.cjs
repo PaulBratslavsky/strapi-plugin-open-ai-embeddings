@@ -1,0 +1,3 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const u=require("react/jsx-runtime"),r=require("styled-components"),i=require("./MultiSelect.cjs"),a=e=>e&&e.__esModule?e:{default:e},s=a(r),c=({options:e,...n})=>u.jsx(i.MultiSelect,{...n,children:e.map(l=>"children"in l?u.jsx(i.MultiSelectGroup,{label:l.label,values:l.children.map(t=>t.value.toString()),children:l.children.map(t=>u.jsx(d,{value:t.value,children:t.label},t.value))},l.label):u.jsx(i.MultiSelectOption,{value:l.value,children:l.label},l.value))}),d=s.default(i.MultiSelectOption)`
+  padding-left: ${({theme:e})=>e.spaces[7]};
+`;exports.MultiSelectNested=c;

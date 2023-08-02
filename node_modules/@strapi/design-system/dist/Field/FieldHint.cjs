@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const i=require("react/jsx-runtime"),n=require("./FieldContext.cjs"),o=require("../Typography/Typography.cjs"),l=()=>{const{id:t,hint:e,error:r}=n.useField();return!e||r?null:i.jsx(o.Typography,{variant:"pi",as:"p",id:`${t}-hint`,textColor:"neutral600",children:e})};exports.FieldHint=l;

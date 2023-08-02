@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const n=({expanded:r,disabled:t,variant:a})=>{let e="neutral100";return r?e="primary100":t?e="neutral150":a==="primary"&&(e="neutral0"),e};exports.getBackground=n;

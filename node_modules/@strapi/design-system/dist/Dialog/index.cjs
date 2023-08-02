@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const o=require("./Dialog.cjs"),e=require("./DialogBody.cjs"),i=require("./DialogFooter.cjs");exports.Dialog=o.Dialog;exports.DialogBody=e.DialogBody;exports.DialogFooter=i.DialogFooter;

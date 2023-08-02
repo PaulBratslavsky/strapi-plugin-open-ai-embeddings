@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("./useNotifyAT.cjs"),i=require("./LiveRegions.cjs");exports.useNotifyAT=e.useNotifyAT;exports.LiveRegions=i.LiveRegions;

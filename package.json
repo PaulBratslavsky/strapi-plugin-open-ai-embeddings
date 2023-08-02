@@ -1,0 +1,57 @@
+{
+  "name": "strapi-plugin-open-ai-embeddings",
+  "version": "1.0.0",
+  "description": "Create embeddings with LangChain, Open Ai and Pinecone.",
+  "strapi": {
+    "name": "strapi-plugin-open-ai-embeddings",
+    "description": "Create embeddings with LangChain, Open Ai and Pinecone.",
+    "kind": "plugin",
+    "displayName": "Open AI Embeddings"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PaulBratslavsky/strapi-plugin-open-ai-embeddings"
+  },
+    "dependencies": {
+    "@pinecone-database/pinecone": "^0.1.6",
+    "@strapi/design-system": "^1.6.3",
+    "@strapi/helper-plugin": "^4.6.0",
+    "@strapi/icons": "^1.6.3",
+    "@uiw/react-md-editor": "^3.23.3",
+    "langchain": "^0.0.106",
+    "prop-types": "^15.7.2",
+    "qs": "^6.11.2",
+    "react-markdown": "^8.0.7",
+    "rehype-sanitize": "^5.0.1"
+  },
+  "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^5.3.4",
+    "styled-components": "^5.3.6"
+  },
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0",
+    "react-router-dom": "^5.3.4",
+    "styled-components": "^5.3.6",
+    "strapi": "^4.11.4"
+  },
+  "author": {
+    "name": "Paul Bratslavsky",
+    "email": "codingafterthirty@gmail.com",
+    "url": "https://www.youtube.com/channel/UCUHcdOLc0iVDc3qi1axYKzQ"
+  },
+  "maintainers": [
+    {
+      "name": "Paul Bratslavsky",
+      "email": "codingafterthirty@gmail.com",
+      "url": "https://www.youtube.com/channel/UCUHcdOLc0iVDc3qi1axYKzQ"
+    }
+  ],
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

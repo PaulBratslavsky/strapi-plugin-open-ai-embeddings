@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "embeddings",
+  "info": {
+    "singularName": "embedding",
+    "pluralName": "embeddings",
+    "displayName": "embedding "
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "content-manager": {
+      "visible": false
+    },
+    "content-type-builder": {
+      "visible": false
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "embeddingsId": {
+      "type": "string"
+    },
+    "embeddings": {
+      "type": "json"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "related": {
+      "type": "relation",
+      "relation": "morphToOne",
+      "configurable": false
+    }
+  }
+}

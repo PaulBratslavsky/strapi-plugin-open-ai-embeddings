@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const r=require("./Avatar.cjs"),a=require("./AvatarGroup.cjs");exports.Avatar=r.Avatar;exports.Initials=r.Initials;exports.AvatarGroup=a.AvatarGroup;

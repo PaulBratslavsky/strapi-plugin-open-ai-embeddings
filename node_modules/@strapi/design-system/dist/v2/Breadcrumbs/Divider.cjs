@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("react/jsx-runtime"),i=require("../../Box/Box.cjs"),t=require("../../Typography/Typography.cjs"),r=()=>e.jsx(i.Box,{"aria-hidden":!0,paddingLeft:1,paddingRight:1,children:e.jsx(t.Typography,{variant:"pi",textColor:"neutral500",children:"/"})});r.displayName="Divider";exports.Divider=r;

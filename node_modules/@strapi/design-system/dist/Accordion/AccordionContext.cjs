@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("react"),t=e.createContext({disabled:!1,expanded:!1,id:"",size:"M",variant:"primary"}),o=()=>e.useContext(t);exports.AccordionContext=t;exports.useAccordion=o;

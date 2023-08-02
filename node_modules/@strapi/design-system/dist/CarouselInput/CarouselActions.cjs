@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const s=require("react/jsx-runtime"),n=require("../Flex/Flex.cjs"),r=({horizontal:e=!0,spacing:t=1,...o})=>s.jsx(n.Flex,{justifyContent:"center",gap:t,direction:e?"row":"column",alignItems:e?"center":"stretch",position:"absolute",width:"100%",bottom:1,...o});exports.CarouselActions=r;
