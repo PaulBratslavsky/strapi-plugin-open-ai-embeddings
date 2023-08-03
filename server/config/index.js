@@ -2,5 +2,7 @@
 
 module.exports = {
   default: {},
-  validator() {},
+  validator() {
+    
+  },
 };
