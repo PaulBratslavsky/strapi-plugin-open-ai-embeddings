@@ -125,7 +125,17 @@ export default function EmbeddingDetails() {
 
   if (!data?.id) return null;
 
-  const metadata = data.embeddings && JSON.parse(data.embeddings)[0].metadata;
+  // TODO: ADD TRY CATCH
+
+  console.log(data, "data");
+
+  let metadata = null;
+  try {
+    metadata = data.embeddings && JSON.parse(data.embeddings)[0].metadata;
+  }
+  catch (e) {
+    console.log(e, "error parsing metadata");
+  }
 
   return (
     <ContentLayout>
