@@ -102,10 +102,12 @@ export default function EmbeddingDetails() {
 
   useEffect(() => {
     async function fetchData() {
-      const data = await get(
-        `/open-ai-embeddings/embeddings/find/${params.id}`
-      );
-      setData(data.data);
+      try {
+        const data = await get(`/open-ai-embeddings/embeddings/find/${params.id}`);
+        setData(data.data);
+      } catch (error) {
+        console.error("An error occurred while fetching the data: ", error);
+      }
     }
     fetchData();
   }, []);
@@ -125,18 +127,19 @@ export default function EmbeddingDetails() {
 
   if (!data?.id) return null;
 
-  // TODO: ADD TRY CATCH
-
-  console.log(data, "data");
-
   let metadata = null;
   try {
-    metadata = data.embeddings && JSON.parse(data.embeddings)[0].metadata;
+    if(data.embeddings) {
+      console.log("data.embeddings: ", data.embeddings);
+      const embeddings = JSON.parse(data.embeddings);
+      console.log("embeddings: ", embeddings);
+      if (embeddings.length > 0 && embeddings[0].metadata) {
+        metadata = embeddings[0].metadata;
+      }
+    }
+  } catch (e) {
+    console.error("Error parsing metadata: ", e);
   }
-  catch (e) {
-    console.log(e, "error parsing metadata");
-  }
-
   return (
     <ContentLayout>
       <Header
