@@ -70,6 +70,28 @@ function ConfirmDeleteEmbedding({ callback, isLoading }) {
   );
 }
 
+function Metadata({ metadata }) {
+  function RenderMetadata({ metadata }) {
+    return Object.entries(metadata).map(([key, value]) => (
+      <Box key={key} padding={1}>
+        <Typography>
+          {key}: {value}
+        </Typography>
+      </Box>
+    ));
+  }
+
+  return (
+    <Box padding={4} background="neutral0">
+      <StyledTypography variant="beta">Meta Data</StyledTypography>
+      { !metadata 
+        ? <Typography>No metadata</Typography>
+        : <RenderMetadata metadata={metadata} />
+      }
+    </Box>
+  );
+}
+
 export default function EmbeddingDetails() {
   const history = useHistory();
   const params = useParams();
@@ -103,23 +125,13 @@ export default function EmbeddingDetails() {
 
   if (!data?.id) return null;
 
-  const metadata = JSON.parse(data.embeddings)[0].metadata;
-
-  function renderMetadata(metadata) {
-    return Object.entries(metadata).map(([key, value]) => (
-      <Box key={key} padding={1}>
-        <Typography>
-          {key}: {value}
-        </Typography>
-      </Box>
-    ));
-  }
+  const metadata = data.embeddings && JSON.parse(data.embeddings)[0].metadata;
 
   return (
     <ContentLayout>
       <Header
         title={data.title || "Embeddings Details"}
-        subtitle={`Pinecone ID: ${data.embeddingsId}`}
+        subtitle={`Pinecone ID: ${data.embeddingsId || "N/A"}`}
         primaryAction={<ConfirmDeleteEmbedding callback={handleDelete} />}
         navigationAction={<BackLink to={"/plugins/" + pluginId + "/"} />}
       />
@@ -134,10 +146,7 @@ export default function EmbeddingDetails() {
             </Box>
           </GridItem>
           <GridItem background="neutral100" padding={1} col={4} s={12}>
-            <Box padding={4} background="neutral0">
-              <StyledTypography variant="beta">Meta Data</StyledTypography>
-              {renderMetadata(metadata)}
-            </Box>
+            <Metadata metadata={metadata} />
           </GridItem>
         </Grid>
       </Box>
