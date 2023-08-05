@@ -19,14 +19,28 @@ import { useFetchClient } from "@strapi/helper-plugin";
 import Header from "../../components/Header";
 import Markdown from "../../components/Markdown";
 import BackLink from "../../components/BackLink";
+import Metadata from "../../components/Metadata";
 import pluginId from "../../pluginId";
 import { useHistory, useParams } from "react-router-dom";
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const StyledTypography = styled(Typography)`
   display: block;
   margin-bottom: 1rem;
 `;
+
+
+function ensureParsedJSON(entity) {
+  if (entity === null || entity === undefined) return null;
+  if (typeof entity === "string") {
+    try {
+      return JSON.parse(entity);
+    } catch (e) {
+      console.error("Error Parsing JSON: ", e);
+    }
+  }
+  return entity;
+}
 
 function ConfirmDeleteEmbedding({ callback, isLoading }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -70,28 +84,6 @@ function ConfirmDeleteEmbedding({ callback, isLoading }) {
   );
 }
 
-function Metadata({ metadata }) {
-  function RenderMetadata({ metadata }) {
-    return Object.entries(metadata).map(([key, value]) => (
-      <Box key={key} padding={1}>
-        <Typography>
-          {key}: {value}
-        </Typography>
-      </Box>
-    ));
-  }
-
-  return (
-    <Box padding={4} background="neutral0">
-      <StyledTypography variant="beta">Meta Data</StyledTypography>
-      { !metadata 
-        ? <Typography>No metadata</Typography>
-        : <RenderMetadata metadata={metadata} />
-      }
-    </Box>
-  );
-}
-
 export default function EmbeddingDetails() {
   const history = useHistory();
   const params = useParams();
@@ -103,7 +95,9 @@ export default function EmbeddingDetails() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const data = await get(`/open-ai-embeddings/embeddings/find/${params.id}`);
+        const data = await get(
+          `/open-ai-embeddings/embeddings/find/${params.id}`
+        );
         setData(data.data);
       } catch (error) {
         console.error("An error occurred while fetching the data: ", error);
@@ -127,19 +121,10 @@ export default function EmbeddingDetails() {
 
   if (!data?.id) return null;
 
-  let metadata = null;
-  try {
-    if(data.embeddings) {
-      console.log("data.embeddings: ", data.embeddings);
-      const embeddings = JSON.parse(data.embeddings);
-      console.log("embeddings: ", embeddings);
-      if (embeddings.length > 0 && embeddings[0].metadata) {
-        metadata = embeddings[0].metadata;
-      }
-    }
-  } catch (e) {
-    console.error("Error parsing metadata: ", e);
-  }
+  const embeddings = ensureParsedJSON(data.embeddings);
+  const metadata = embeddings && embeddings[0].metadata;
+  console.log("metadata", metadata);
+
   return (
     <ContentLayout>
       <Header
